@@ -15,14 +15,16 @@ const HeaderSearch = (props) => {
           <button
             type="button"
             onClick={props.handleOnSubmit}
-            className="py-2 px-4 ml-2 font-bold text-white bg-indigo-500 hover:bg-indigo-700 disabled:bg-indigo-500/20 rounded">
+            className="py-2 px-4 ml-2 font-bold text-white bg-indigo-500 hover:bg-indigo-700 disabled:bg-indigo-500/20 rounded"
+          >
             Search
           </button>{' '}
           <button
             type="button"
             onClick={props.handleOnReset}
             disabled={props.searchTerm == ''}
-            className="py-2 px-4 ml-2 font-bold text-white bg-indigo-400 hover:bg-indigo-500 disabled:bg-indigo-500/20 rounded">
+            className="py-2 px-4 ml-2 font-bold text-white bg-indigo-400 hover:bg-indigo-500 disabled:bg-indigo-500/20 rounded"
+          >
             Clear Search
           </button>
         </div>

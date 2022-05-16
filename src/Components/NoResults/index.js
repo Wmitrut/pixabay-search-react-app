@@ -18,7 +18,8 @@ const NoResults = (props) => {
           type="button"
           onClick={props.handleOnReset}
           disabled={props.searchTerm == ''}
-          className="ml-2 rounded bg-indigo-400 py-2 px-4 font-bold text-white hover:bg-indigo-500 disabled:bg-indigo-500/20">
+          className="ml-2 rounded bg-indigo-400 py-2 px-4 font-bold text-white hover:bg-indigo-500 disabled:bg-indigo-500/20"
+        >
           Clear Search
         </button>
       </div>

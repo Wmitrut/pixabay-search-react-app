@@ -10,7 +10,7 @@ const fetchImages = async (searchTerm) => {
     const response = await fetch(
       `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_KEY}&q=` +
         searchTerm +
-        `&image_type=photo&pretty=true`,
+        `&image_type=photo&pretty=true&nature=true`,
     );
     const responseJSON = await response.json();
     return responseJSON;
@@ -53,9 +53,9 @@ function App() {
         handleOnSubmit={handleOnSubmit}
         handleOnReset={handleOnReset}
       />
-      <section className="content-center justify-center overflow-hidden text-gray-700">
-        <div className="container mx-auto py-2 px-5 lg:px-32 lg:pt-12">
-          <div className="-m-1 flex flex-wrap justify-center md:-m-2">
+      <section className="overflow-hidden justify-center content-center text-gray-700">
+        <div className="container py-2 px-5 mx-auto lg:px-32 lg:pt-12">
+          <div className="flex flex-wrap justify-center -m-1 md:-m-2">
             {data !== null ? (
               <>
                 {data.length > 0 ? (

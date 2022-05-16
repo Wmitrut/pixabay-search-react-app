@@ -6,9 +6,11 @@
   "trailingComma": "all",
   "jsxBracketSameLine": true,
   "rules": {
-    "prettier/prettier": ["error",{
-      "endOfLine": "auto"}
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
     ]
-
   }
 }
