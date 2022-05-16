@@ -42,46 +42,35 @@ function App() {
 
   return (
     <>
-      <form onSubmit={handleOnSubmit}>
-        <div className="flex justify-center">
-          <div className="mb-3 xl:w-96">
-            <div className="input-group relative flex items-stretch w-full mb-4 rounded">
-              <input
-                ref={inputRef}
-                focus
-                placeholder="Type away any thing you want to search images about"
-                defaultValue={searchTerm}
-                className="relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                aria-label="Search"
-                aria-describedby="button-addon2"
-              />
-              <span
-                className="input-group-text flex items-center px-3 py-1.5 text-base font-normal text-gray-700 text-center whitespace-nowrap rounded"
-                id="basic-addon2">
-                <svg
-                  aria-hidden="true"
-                  focusable="false"
-                  data-prefix="fas"
-                  data-icon="search"
-                  className="w-4"
-                  role="img"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512">
-                  <path
-                    fill="currentColor"
-                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
-                </svg>
-              </span>
-            </div>
-          </div>
-        </div>
-        <button type="button" onClick={handleOnReset}>
-          reset{' '}
-        </button>{' '}
-      </form>{' '}
-      <section className="overflow-hidden text-gray-700 ">
+      <header className="p-2 flex flex-row items-center justify-center border-b-2 border-indigo-100">
+        <form onSubmit={handleOnSubmit}>
+          <input
+            ref={inputRef}
+            focus
+            className="w-full h-10 pl-4 pr-10 text-sm bg-white rounded-lg shadow-sm sm:w-80 border-2 border-indigo-500/50  hover:border-indigo-500/80 focus:border-indigo-500 focus:ring-0"
+            id="search"
+            placeholder="Type away any thing you want to search"
+            defaultValue={searchTerm}
+            aria-label="Search"
+          />
+          <button
+            type="button"
+            onClick={handleOnSubmit}
+            className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 ml-2 rounded disabled:bg-indigo-500/20">
+            Search
+          </button>{' '}
+          <button
+            type="button"
+            onClick={handleOnReset}
+            disabled={searchTerm == ''}
+            className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 ml-2 rounded disabled:bg-indigo-500/20">
+            Clear Search
+          </button>{' '}
+        </form>{' '}
+      </header>
+      <section className="overflow-hidden text-gray-700 content-center justify-center">
         <div className="container px-5 py-2 mx-auto lg:pt-12 lg:px-32">
-          <div className="flex flex-wrap -m-1 md:-m-2">
+          <div className="flex flex-wrap -m-1 md:-m-2 justify-center">
             {' '}
             {data !== null ? (
               <>
@@ -90,13 +79,13 @@ function App() {
                     {' '}
                     {data.map((image, index) => (
                       <div
-                        className="flex flex-wrap lg:w-1/4 sm:w-1/1 md:w-1/2  overflow-hidden bg-no-repeat bg-cover max-w-xs"
+                        className="flex flex-wrap lg:w-1/4 sm:w-1/1 md:w-1/2  overflow-hidden max-w-xs rounded-lg"
                         key={index}>
-                        <div className="w-full p-1 md:p-2  overflow-hidden bg-no-repeat bg-cover max-w-xs">
+                        <div className="w-full p-1 md:p-2  overflow-hidden max-w-xs">
                           <img
                             alt="gallery"
                             loading="lazy"
-                            className="block object-cover object-center w-full h-full rounded-lg hover:scale-110 transition duration-300 ease-in-out"
+                            className="block object-cover object-center h-48 w-full rounded-lg hover:scale-110 transition duration-300 ease-in-out bg-indigo-100"
                             src={image.webformatURL}
                           />{' '}
                         </div>{' '}
@@ -104,11 +93,36 @@ function App() {
                     ))}{' '}
                   </>
                 ) : (
-                  <p>No results for this term</p>
+                  <>
+                    <div className="text-center content-center justify-center">
+                      <img
+                        src="https://www.hyperui.dev/photos/confused-travolta.gif"
+                        alt="John Travolta confused"
+                        className="object-cover w-96 h-64 rounded-lg mt-2 mb-2 m-auto"
+                      />
+                      <span className="mt-6 text-gray-500">
+                        We cant find anything with{' '}
+                        <strong className="font-semibold">{searchTerm}</strong>, try searching
+                        again.
+                      </span>
+                    </div>
+                  </>
                 )}
               </>
             ) : (
-              <p> Search anything to show images </p>
+              <>
+                <div className="text-center content-center justify-center">
+                  <img
+                    src="https://hosstools.com/wp-content/uploads/2020/10/black-oil-sunflower.jpg"
+                    alt="John Travolta confused"
+                    className="object-cover w-96 h-64 rounded-lg mt-2 mb-2 m-auto"
+                  />
+
+                  <span className="text-gray-500">
+                    Type away in the search bar to find beautiful flowers
+                  </span>
+                </div>
+              </>
             )}{' '}
           </div>{' '}
         </div>{' '}
