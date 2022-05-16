@@ -6,7 +6,7 @@ const NoResults = (props) => {
       <img
         src={Travolta}
         alt="John Travolta confused"
-        className="object-cover m-auto my-2 w-96 h-64 rounded-lg"
+        className="m-auto my-2 h-64 w-96 rounded-lg object-cover"
       />
       <div className="content-center justify-center text-center">
         <span className="mt-6 text-gray-500">
@@ -18,8 +18,7 @@ const NoResults = (props) => {
           type="button"
           onClick={props.handleOnReset}
           disabled={props.searchTerm == ''}
-          className="ml-2 rounded bg-indigo-400 py-2 px-4 font-bold text-white hover:bg-indigo-500 disabled:bg-indigo-500/20"
-        >
+          className="ml-2 rounded bg-indigo-400 py-2 px-4 font-bold text-white hover:bg-indigo-500 disabled:bg-indigo-500/20">
           Clear Search
         </button>
       </div>

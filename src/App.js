@@ -53,9 +53,9 @@ function App() {
         handleOnSubmit={handleOnSubmit}
         handleOnReset={handleOnReset}
       />
-      <section className="overflow-hidden justify-center content-center text-gray-700">
-        <div className="container py-2 px-5 mx-auto lg:px-32 lg:pt-12">
-          <div className="flex flex-wrap justify-center -m-1 md:-m-2">
+      <section className="content-center justify-center overflow-hidden text-gray-700">
+        <div className="container mx-auto py-2 px-5 lg:px-32 lg:pt-12">
+          <div className="-m-1 flex flex-wrap justify-center md:-m-2">
             {data !== null ? (
               <>
                 {data.length > 0 ? (

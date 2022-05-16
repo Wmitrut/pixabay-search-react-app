@@ -2,8 +2,7 @@ const Image = (props) => {
   return (
     <div
       className="sm:w-1/1 flex max-w-xs flex-wrap overflow-hidden  rounded-lg md:w-1/2 lg:w-1/4"
-      key={props.index}
-    >
+      key={props.index}>
       <div className="w-full max-w-xs overflow-hidden  p-1 md:p-2">
         <img
           alt={props.image.tags}
