@@ -4,5 +4,11 @@
   "printWidth": 100,
   "singleQuote": true,
   "trailingComma": "all",
-  "jsxBracketSameLine": true
+  "jsxBracketSameLine": true,
+  "rules": {
+    "prettier/prettier": ["error",{
+      "endOfLine": "auto"}
+    ]
+
+  }
 }

@@ -4,7 +4,7 @@
     "es2021": true,
     "jest": true
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:prettier/recommended","plugin:tailwindcss/recommended"],
+  "extends": [ "prettier", "eslint:recommended", "plugin:react/recommended", "plugin:prettier/recommended","plugin:tailwindcss/recommended"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -16,6 +16,6 @@
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
-    "prettier/prettier": ["error", { "singleQuote": true }]
+    "prettier/prettier": "error"
   }
 }

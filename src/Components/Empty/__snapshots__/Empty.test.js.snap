@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders correctly without data 1`] = `
+<div
+  className="content-center justify-center text-center"
+>
+  <img
+    alt="Sunflower field"
+    className="m-auto my-2 h-64 w-96 rounded-lg object-cover"
+    src="sunflower.jpeg"
+  />
+  <span
+    className="text-gray-500"
+  >
+    Type away in the search bar to find beautiful flowers and more...
+  </span>
+</div>
+`;
