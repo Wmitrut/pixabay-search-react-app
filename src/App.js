@@ -4,7 +4,7 @@ import './App.css';
 const fetchRandomImages = async (searchTerm) => {
   try {
     const response = await fetch(
-      `https://pixabay.com/api/?key=17555297-46a99d3dc7abf78679ec9e640&q=` +
+      `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_KEY}&q=` +
         searchTerm +
         `&image_type=photo&pretty=true`,
     );
