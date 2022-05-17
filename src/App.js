@@ -4,20 +4,7 @@ import Empty from './Components/Empty';
 import Image from './Components/Image';
 import NoResults from './Components/NoResults';
 import HeaderSearch from './Components/HeaderSearch/index';
-
-const fetchImages = async (searchTerm) => {
-  try {
-    const response = await fetch(
-      `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_KEY}&q=` +
-        searchTerm +
-        `&image_type=photo&pretty=true&nature=true`,
-    );
-    const responseJSON = await response.json();
-    return responseJSON;
-  } catch (error) {
-    console.error(error);
-  }
-};
+import { fetchImages } from './Api/api';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
