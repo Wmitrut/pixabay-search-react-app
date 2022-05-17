@@ -6,7 +6,7 @@ exports[`Renders correctly without data 1`] = `
 >
   <img
     alt="John Travolta confused"
-    className="object-cover m-auto my-2 w-96 h-64 rounded-lg"
+    className="m-auto my-2 h-64 w-96 rounded-lg object-cover"
     src="travolta.gif"
   />
   <div
